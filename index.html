@@ -269,9 +269,9 @@ footer{background:rgba(20,20,20,0.88);border-top:1px solid var(--line);padding:6
 .sobre-text h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:22px}
 .sobre-text p{color:var(--grey);font-size:1rem;margin-bottom:16px;line-height:1.7}
 .sobre-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.stat-box{background:rgba(18,18,18,0.85);border:1px solid var(--line);border-radius:6px;padding:32px 24px;text-align:center;transition:all .4s}
+.stat-box{background:rgba(18,18,18,0.85);border:1px solid var(--line);border-radius:6px;padding:32px 24px;text-align:center;transition:border-color .4s,transform .4s;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .stat-box:hover{border-color:rgba(212,169,74,0.4);transform:translateY(-4px)}
-.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1.1;font-variant-numeric:tabular-nums;min-height:1.1em}
 .stat-label{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);margin-top:8px}
 
 /* TESTIMONIOS */
@@ -702,22 +702,35 @@ window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.
 </script>
 
 <script>
-// Contador animado al hacer scroll
+// Contador animado al hacer scroll (sin saltos de layout)
 const counters = document.querySelectorAll('.stat-num');
+counters.forEach(el => {
+  // Reservar el ancho final desde el inicio para evitar reflow
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  el.style.display = 'inline-block';
+  el.style.minWidth = (String(target).length + suffix.length) * 0.62 + 'em';
+  el.textContent = '0' + suffix;
+});
 const animateCounter = (el) => {
   const target = parseInt(el.dataset.target);
   const suffix = el.dataset.suffix || '';
   let current = 0;
   const duration = 1600;
-  const step = target / (duration / 16);
-  const timer = setInterval(() => {
-    current += step;
-    if (current >= target) {
-      current = target;
-      clearInterval(timer);
+  const startTime = performance.now();
+  const tick = (now) => {
+    const progress = Math.min((now - startTime) / duration, 1);
+    // easing suave
+    const eased = 1 - Math.pow(1 - progress, 3);
+    current = Math.floor(target * eased);
+    el.textContent = current + suffix;
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      el.textContent = target + suffix;
     }
-    el.textContent = Math.floor(current) + suffix;
-  }, 16);
+  };
+  requestAnimationFrame(tick);
 };
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -726,7 +739,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.4 });
 counters.forEach(c => observer.observe(c));
 </script>
 
