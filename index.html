@@ -298,6 +298,29 @@ footer{background:rgba(20,20,20,0.88);border-top:1px solid var(--line);padding:6
 .cob-col strong{color:var(--gold);font-size:0.92rem;display:block;margin-bottom:8px;font-weight:600}
 .cob-col span{color:var(--grey);font-size:0.86rem;line-height:1.7}
 @media(max-width:820px){.cobertura-grid{grid-template-columns:1fr;gap:20px}}
+
+/* MENÚ MÓVIL */
+@media(max-width:820px){
+  .nav-links{
+    display:flex;flex-direction:column;position:fixed;top:0;right:-100%;
+    width:78%;max-width:320px;height:100vh;
+    background:rgba(12,12,12,0.98);backdrop-filter:blur(20px);
+    padding:100px 32px 40px;gap:8px;
+    border-left:1px solid var(--line);
+    transition:right .4s cubic-bezier(.22,1,.36,1);
+    z-index:150;
+  }
+  .nav-links.open{right:0}
+  .nav-links a{font-size:1.05rem;padding:14px 0;border-bottom:1px solid var(--line);width:100%}
+  .nav-links a:last-child{border-bottom:none}
+  .nav-cta{text-align:center;margin-top:16px;border:1px solid var(--gold)!important}
+  .menu-btn{z-index:200;position:relative}
+  .menu-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,0.5);
+    opacity:0;visibility:hidden;transition:all .4s;z-index:140;
+  }
+  .menu-overlay.open{opacity:1;visibility:visible}
+}
 </style>
 </head>
 <body>
@@ -319,6 +342,7 @@ footer{background:rgba(20,20,20,0.88);border-top:1px solid var(--line);padding:6
     </button>
   </div>
 </nav>
+<div class="menu-overlay" id="menuOverlay"></div>
 
 <header class="hero">
   <div class="hero-content">
@@ -701,6 +725,26 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 counters.forEach(c => observer.observe(c));
+</script>
+
+<script>
+// Menú móvil
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+const menuOverlay = document.getElementById('menuOverlay');
+function toggleMenu(){
+  navLinks.classList.toggle('open');
+  menuOverlay.classList.toggle('open');
+}
+if(menuBtn){
+  menuBtn.addEventListener('click', toggleMenu);
+  menuOverlay.addEventListener('click', toggleMenu);
+  // Cerrar al hacer clic en un enlace
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuOverlay.classList.remove('open');
+  }));
+}
 </script>
 </body>
 </html>
