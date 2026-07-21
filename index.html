@@ -297,10 +297,11 @@ footer{background:rgba(20,20,20,0.88);border-top:1px solid var(--line);padding:6
 
 .foot-cobertura{border-top:1px solid var(--line);padding-top:32px;margin-bottom:32px}
 .foot-cobertura h4{font-size:0.76rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--cream);margin-bottom:20px;font-weight:600}
-.cobertura-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.cobertura-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .cob-col strong{color:var(--gold);font-size:0.92rem;display:block;margin-bottom:8px;font-weight:600}
 .cob-col span{color:var(--grey);font-size:0.86rem;line-height:1.7}
-@media(max-width:820px){.cobertura-grid{grid-template-columns:1fr;gap:20px}}
+@media(max-width:1000px){.cobertura-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.cobertura-grid{grid-template-columns:1fr;gap:20px}}
 
 /* MENÚ MÓVIL */
 @media(max-width:820px){
@@ -324,6 +325,9 @@ footer{background:rgba(20,20,20,0.88);border-top:1px solid var(--line);padding:6
   }
   .menu-overlay.open{opacity:1;visibility:visible}
 }
+
+/* LÍNEA MARRÓN */
+.marron{background:rgba(20,20,20,0.55);backdrop-filter:blur(2px)}
 </style>
 </head>
 <body>
@@ -334,6 +338,7 @@ footer{background:rgba(20,20,20,0.88);border-top:1px solid var(--line);padding:6
     <div class="nav-links">
       <a href="#servicios">Línea blanca</a>
       <a href="#pequenos">Pequeños</a>
+      <a href="#marron">Línea marrón</a>
       <a href="#porque">¿Por qué nosotros?</a>
       <a href="#sobre">Nosotros</a>
       <a href="#proceso">Cómo funciona</a>
@@ -351,7 +356,7 @@ footer{background:rgba(20,20,20,0.88);border-top:1px solid var(--line);padding:6
   <div class="hero-content">
     <span class="eyebrow" style="opacity:0;animation:fadeUp 1s ease .2s forwards;display:block;margin-bottom:22px">Servicio técnico premium · Medellín</span>
     <h1 style="opacity:0;animation:fadeUp 1s ease .4s forwards">Su electrodoméstico,<br><em>como nuevo</em> otra vez.</h1>
-    <p class="hero-sub" style="opacity:0;animation:fadeUp 1s ease .7s forwards;margin-left:auto;margin-right:auto">Especialistas en línea blanca y todo tipo de electrodomésticos para Medellín y el Valle de Aburrá. Más de 13 años de experiencia, diagnóstico honesto y atención a domicilio.</p>
+    <p class="hero-sub" style="opacity:0;animation:fadeUp 1s ease .7s forwards;margin-left:auto;margin-right:auto">Especialistas en línea blanca, línea marrón y todo tipo de electrodomésticos para Medellín y el Valle de Aburrá. Más de 13 años de experiencia, diagnóstico honesto y atención a domicilio.</p>
     <div class="hero-btns" style="opacity:0;animation:fadeUp 1s ease 1s forwards;justify-content:center">
       <a href="https://wa.me/573016674435?text=Hola%20SERVITOP,%20necesito%20una%20reparaci%C3%B3n" class="btn btn-gold" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.4.4 0 0 0 0-.4l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.9 2 4.7 4.7 0 0 0 1 2.5 10.8 10.8 0 0 0 4.1 3.6c.6.3 1 .4 1.4.5a3.3 3.3 0 0 0 1.5.1 2.5 2.5 0 0 0 1.6-1.1 2 2 0 0 0 .1-1.1c0-.2-.2-.2-.4-.3z"/></svg>
@@ -471,6 +476,42 @@ footer{background:rgba(20,20,20,0.88);border-top:1px solid var(--line);padding:6
       <a class="peq peq-more" href="https://wa.me/573016674435?text=Hola%20SERVITOP,%20tengo%20otro%20electrodoméstico%20para%20reparar" target="_blank" rel="noopener">
         <svg class="peq-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         <span>¿Otro? Escríbanos</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="marron" id="marron">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Línea marrón y electrónica</span>
+      <h2>También reparamos su <span class="gold">electrónica</span></h2>
+      <p>No solo electrodomésticos. Damos servicio técnico a sus equipos de entretenimiento y cocina moderna.</p>
+    </div>
+    <div class="svc-grid">
+      <a class="svc" href="https://wa.me/573016674435?text=Hola%20SERVITOP,%20necesito%20reparar%20mi%20televisor" target="_blank" rel="noopener">
+        <span class="svc-num">01</span>
+        <div class="svc-icon-wrap"><svg class="svc-icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="1.5"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></svg></div>
+        <h3>Televisores</h3>
+        <p>Pantallas LED, LCD y Smart TV. No enciende, sin imagen, sin sonido o con líneas. Todas las marcas.</p>
+      </a>
+      <a class="svc" href="https://wa.me/573016674435?text=Hola%20SERVITOP,%20necesito%20reparar%20mi%20torre%20de%20sonido" target="_blank" rel="noopener">
+        <span class="svc-num">02</span>
+        <div class="svc-icon-wrap"><svg class="svc-icon" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="1.5"/><circle cx="12" cy="8" r="2.5"/><circle cx="12" cy="15.5" r="3"/></svg></div>
+        <h3>Torres de sonido</h3>
+        <p>Equipos de sonido y minicomponentes. No prende, sin audio, bandeja o bluetooth con fallas.</p>
+      </a>
+      <a class="svc" href="https://wa.me/573016674435?text=Hola%20SERVITOP,%20necesito%20reparar%20mi%20cubierta%20de%20inducci%C3%B3n" target="_blank" rel="noopener">
+        <span class="svc-num">03</span>
+        <div class="svc-icon-wrap"><svg class="svc-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1.5"/><circle cx="8" cy="8" r="2.5"/><circle cx="16" cy="8" r="2.5"/><circle cx="8" cy="16" r="2.5"/><circle cx="16" cy="16" r="2.5"/></svg></div>
+        <h3>Cubiertas de inducción</h3>
+        <p>Cubiertas de inducción y vitrocerámicas. No calienta, marca error o no reconoce el recipiente.</p>
+      </a>
+      <a class="svc" href="https://wa.me/573016674435?text=Hola%20SERVITOP,%20necesito%20reparar%20mi%20cubierta" target="_blank" rel="noopener">
+        <span class="svc-num">04</span>
+        <div class="svc-icon-wrap"><svg class="svc-icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="8" cy="12" r="2.5"/><circle cx="16" cy="12" r="2.5"/></svg></div>
+        <h3>Cubiertas a gas</h3>
+        <p>Cubiertas y planchas a gas. Quemadores que no encienden, fugas o perillas dañadas.</p>
       </a>
     </div>
   </div>
@@ -681,7 +722,11 @@ footer{background:rgba(20,20,20,0.88);border-top:1px solid var(--line);padding:6
         </div>
         <div class="cob-col">
           <strong>Oriente antioqueño</strong>
-          <span>Rionegro · Marinilla · La Ceja · El Carmen de Viboral · Guarne</span>
+          <span>Rionegro · Marinilla · La Ceja · El Carmen de Viboral · Guarne · Llano Grande</span>
+        </div>
+        <div class="cob-col">
+          <strong>Occidente antioqueño</strong>
+          <span>Santa Fe de Antioquia · Sopetrán · San Jerónimo</span>
         </div>
       </div>
     </div>
