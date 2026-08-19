@@ -1,4 +1,4 @@
-# 🛠️ Servitop - Soluciones Técnicas Integrales
+# 🛠️ Servitop 
 
 Este repositorio contiene el código fuente y la arquitectura web del portal oficial de **Servitop**, una empresa especializada en diagnóstico y reparación técnica de electrodomésticos y equipos electrónicos.
 
