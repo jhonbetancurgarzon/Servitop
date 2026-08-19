@@ -9,7 +9,6 @@ El portal ha sido diseñado para ofrecer una experiencia rápida y eficiente a n
 * **Lenguajes:** HTML5, CSS3, JavaScript.
 * **Infraestructura:** Gestión de DNS a través de Cloudflare.
 * **Hosting:** Despliegue automatizado mediante GitHub Pages.
-* **Analítica:** Implementación de etiquetas para seguimiento de conversiones y optimización mediante Google Tag Manager.
 
 ## 📁 Estructura del Repositorio
 * `index.html`: Página de inicio y centro de contacto.
