@@ -3,7 +3,7 @@
 Este repositorio contiene el código fuente y la arquitectura web del portal oficial de **Servitop**, una empresa especializada en diagnóstico y reparación técnica de electrodomésticos y equipos electrónicos.
 
 ## 🚀 Sobre el Proyecto
-El portal ha sido diseñado para ofrecer una experiencia rápida y eficiente a nuestros clientes, facilitando la solicitud de servicios técnicos y proporcionando información detallada sobre nuestra cobertura en la región de Antioquia.
+El portal ha sido diseñado para ofrecer una experiencia rápida y eficiente a nuestros clientes, facilitando la solicitud de servicios técnicos.
 
 ## 💻 Tecnologías Utilizadas
 * **Lenguajes:** HTML5, CSS3, JavaScript.
